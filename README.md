@@ -1,116 +1,129 @@
+AI Vehicle Damage Detection System 🚗🔍
 
-# YOLO11m Model for Car Body Damage Detection
-YOLO11m-based car damage detector using deep learning, computer vision, and AI. This custom-trained model (trained.pt) was fine-tuned on a specialized dataset to detect and classify common vehicle body damage: dents, scratches, cracks, broken lamps, shattered glass, and flat tires. It’s high-capacity, fast-enough, and built for real-world inspection workflows. 
+A full-stack AI application that detects vehicle defects from uploaded images and generates an automated inspection report. The system uses a YOLO-based object detection model integrated with a Flask backend and a React frontend dashboard.
 
----
+Project Overview
 
+This project demonstrates how computer vision can be used for automated vehicle inspection. Users can upload an image of a vehicle, and the system detects possible defects using an object detection model. The results are displayed visually along with a structured inspection report including defect type, confidence score, and severity classification.
 
-## Model Overview
+Features
 
-- **Architecture:** YOLO11m (231 layers, ~20M parameters)
-- **Dataset:** CarDD_COCO (custom fine-tuned version)
-- **Classes:** dent, scratch, crack, shattered_glass, broken_lamp, flat_tire
-- **Training Framework:** Ultralytics 8.3.117, PyTorch 2.6.0+cu124, Python 3.11.12
+Upload vehicle images for inspection
 
----
+AI-based defect detection using a YOLO model
 
-## Performance Snapshot
+Visualization of detected defects on the image
 
-Class-by-class tactical breakdown:
+Inspection report with defect type and confidence score
 
-| Class            | Box Precision (P) | Recall (R) | mAP50 | mAP50-95 |
-|:-----------------|:------------------|:-----------|:------|:---------|
-| shattered_glass  | 0.979              | 0.978      | 0.994 | 0.963    |
-| flat_tire        | 0.943              | 0.919      | 0.959 | 0.932    |
-| broken_lamp      | 0.826              | 0.821      | 0.895 | 0.796    |
-| dent             | 0.832              | 0.520      | 0.692 | 0.568    |
-| scratch          | 0.737              | 0.800      | 0.905 | 0.610    |
-| crack            | 0.699              | 0.586      | 0.620 | 0.424    |
+Severity classification (High / Medium / Low)
 
----
+Full-stack integration with Flask and React
 
-## Tactical Highlights
+Clean and interactive user interface
 
-- **Shattered Glass:** Elite — nearly flawless across all metrics.  
-- **Flat Tire:** Excellent — reliable, highly precise detections.  
-- **Broken Lamp:** Very strong — high precision and consistency.  
-- **Dent/Scratch/Crack:** Weakest — fair performance, but prone to missed detections and slight localization drift (especially cracks).
+Tech Stack
 
----
-## Example Outputs
+Frontend
 
-Below are sample detection results from the model:
-![Example 2](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/2.png)
-![Example 5](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/5.png)
-![Example 6](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/6.png)
-![Example 4](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/4.png)
-![Example 7](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/7.png)
-![Example 1](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/1.png)
-![Example 3](https://raw.githubusercontent.com/ReverendBayes/vehicle_body_damage_detector/main/public/3.png)
----
+React.js
 
-## Use Cases
+Bootstrap
 
-This model is fully usable for visual inspection support. It is intended as an assistive tool—not a replacement—for human service advisors. It aims to accelerate visual inspections, flag overlooked damage, and ensure consistency across high-throughput intake workflows. Use for inspection workflows, damage logging, or visual diagnostics.
+Backend
 
-This model saves time, adds consistency, and helps document condition clearly before keys are handed over. It’s assistive—not autonomous. It gives advisors a head start.
+Python
 
-- Pre-loaner vehicle inspections
-- Service center damage logging
-- Fleet condition audits
-- Insurance pre-claim imaging
-- Rental return documentation
+Flask
 
----
+Flask-CORS
 
-## Real-World Use: BMW Pre-Loaner Inspections
+Machine Learning / Computer Vision
 
-An enhanced version of this model was developed for BMW service environments to support pre-loaner and service drive vehicle inspections. 
+YOLO (Ultralytics)
 
-BMW car dealerships did not have a simple, automated, and high-quality way to document the pre-existing condition of vehicles that entered their care. If the condition of vehicles was not recorded, customer disputes would often occur in regard to pre-existing damages. This problem would hurt customer relationships and cost the business significant amounts of capital. 
+OpenCV
 
-Here’s how it works:
-- Technicians or service drive cameras capture images of the vehicle exterior.
-- The model runs inference and flags visible body damage.
-- Detections are mapped to a standard car diagram automatically.
-- Human service advisors review and finalize the report. (It’s assistive—not autonomous. It gives advisors a head start.)
+PyTorch
 
-This setup saves time, adds consistency, and helps document condition clearly before keys are handed over. 
+System Architecture
 
-“Good enough” here means:  
-- Fewer missed issues  
-- Fewer false alarms  
-- Faster workflows  
-- Repeatable results across locations
+User Uploads Image
+↓
+React Frontend
+↓
+Flask API
+↓
+YOLO Object Detection Model
+↓
+Detection Results + Confidence Scores
+↓
+Inspection Report Displayed in UI
 
----
+Project Structure
+car-defect-detection-ai
+│
+├── backend
+│   ├── app.py
+│   ├── requirements.txt
+│   └── static/uploads
+│
+├── frontend
+│   └── car-defect-frontend
+│       ├── src
+│       ├── public
+│       └── package.json
+│
+├── screenshots
+│
+└── README.md
+How to Run the Project
+1️⃣ Clone the repository
+git clone https://github.com/Manisha1808/car-defect-detection-ai.git
+cd car-defect-detection-ai
+2️⃣ Setup backend
+pip install -r requirements.txt
+python app.py
 
-## Model Files
+Backend runs on:
 
-- `trained.pt` — trained YOLO11m checkpoint 
+http://localhost:5000
+3️⃣ Run frontend
+cd frontend/car-defect-frontend
+npm install
+npm start
 
----
+Frontend runs on:
 
-## Quickstart
+http://localhost:3000
+Example Output
 
-### 1. Install Ultralytics
-```bash
-pip install ultralytics
-```
+The system produces:
 
-### 2. Load and Inference
-```python
-from ultralytics import YOLO
+detected defect regions on the vehicle image
 
-model = YOLO("trained.pt")
-results = model("your_image.jpg", save=True)
-results[0].show()  # Visualize output
-```
+confidence scores for each detection
 
----
+an AI inspection report summarizing the results
 
-## References
+(Add screenshots here in your repo for better presentation.)
 
-- [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)
+Future Improvements
 
----
+Add PDF export for inspection reports
+
+Improve defect classification categories
+
+Deploy full system to cloud
+
+Add model performance metrics dashboard
+
+Author
+
+Manisha Sen
+Computer Science Engineering Student
+Interested in AI, Data Science, and Computer Vision applications.
+
+License
+
+This project uses open-source libraries including YOLO and other Python frameworks.
