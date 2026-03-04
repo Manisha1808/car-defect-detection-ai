@@ -121,7 +121,7 @@ http://localhost:3000
 
 ---
 
-## 📊 Example Output
+## 📊 Output Screenshots
 
 The system produces:
 
