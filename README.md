@@ -1,131 +1,139 @@
-AI Vehicle Damage Detection System 🚗🔍
+# 🚗 AI Vehicle Damage Detection System
 
-A full-stack AI application that detects vehicle defects from uploaded images and generates an automated inspection report. The system uses a YOLO-based object detection model integrated with a Flask backend and a React frontend dashboard.
+A full-stack AI application that detects vehicle defects from uploaded images and generates an automated inspection report.  
+The system uses a **YOLO-based object detection model** integrated with a **Flask backend** and a **React frontend dashboard**.
 
-Project Overview
+---
 
-This project demonstrates how computer vision can be used for automated vehicle inspection. Users can upload an image of a vehicle, and the system detects possible defects using an object detection model. The results are displayed visually along with a structured inspection report including defect type, confidence score, and severity classification.
+## 📌 Project Overview
 
-Features
+This project demonstrates how **computer vision can be used for automated vehicle inspection**.
 
-Upload vehicle images for inspection
+Users can upload an image of a vehicle, and the system detects possible defects using an object detection model. The results are displayed visually along with a structured **AI inspection report** including:
 
-AI-based defect detection using a YOLO model
+- defect type
+- confidence score
+- severity classification
 
-Visualization of detected defects on the image
+---
 
-Inspection report with defect type and confidence score
+## ✨ Features
 
-Severity classification (High / Medium / Low)
+- Upload vehicle images for inspection
+- AI-based defect detection using a YOLO model
+- Visualization of detected defects on the image
+- Inspection report with defect type and confidence score
+- Severity classification (High / Medium / Low)
+- Full-stack integration with Flask and React
+- Clean and interactive user interface
 
-Full-stack integration with Flask and React
+---
 
-Clean and interactive user interface
+## 🛠 Tech Stack
 
-Tech Stack
+### Frontend
+- React.js
+- Bootstrap
 
-Frontend
+### Backend
+- Python
+- Flask
+- Flask-CORS
 
-React.js
+### Machine Learning / Computer Vision
+- YOLO (Ultralytics)
+- OpenCV
+- PyTorch
 
-Bootstrap
+---
 
-Backend
-
-Python
-
-Flask
-
-Flask-CORS
-
-Machine Learning / Computer Vision
-
-YOLO (Ultralytics)
-
-OpenCV
-
-PyTorch
-
-System Architecture
+## 🧠 System Architecture
 
 User Uploads Image
-↓
+
+      ↓
 React Frontend
-↓
+
+      ↓
 Flask API
-↓
+
+      ↓
 YOLO Object Detection Model
-↓
+
+      ↓
 Detection Results + Confidence Scores
-↓
+
+      ↓
 Inspection Report Displayed in UI
+
+
+---
+
+## 📂 Project Structure
 
 car-defect-detection-ai
 │
 ├── backend
-│   ├── app.py
-│   ├── requirements.txt
-│   └── static/uploads
+|
+│ ├── app.py
+| |
+│ ├── requirements.txt
+| |
+│ └── static/uploads
 │
+|
 ├── frontend
-│   └── car-defect-frontend
-│       ├── src
-│       ├── public
-│       └── package.json
+| |
+│ └ |──car-defect-frontend
+|   |
+|   |── src
+|   |
+|   ├── public
+│   | 
+|   └── package.json
 │
+|
 ├── screenshots
 │
+|
 └── README.md
 
 
-How to Run the Project
-1️⃣ Clone the repository
+---
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/Manisha1808/car-defect-detection-ai.git
 cd car-defect-detection-ai
 
-2️⃣ Setup backend
+### 2️⃣ Setup Backend
+
 pip install -r requirements.txt
 python app.py
 
-Backend runs on:
+3️⃣ Run Frontend
 
-http://localhost:5000
-3️⃣ Run frontend
 cd frontend/car-defect-frontend
 npm install
 npm start
 
-Frontend runs on:
+frontend runs on : http://localhost:3000
 
-http://localhost:3000
+## 📊 Example Output
 
-Example Output
+The system produces:
 
- The system produces:
+Detected defect regions on the vehicle image
 
-1) detected defect regions on the vehicle image
+Confidence scores for each detection
 
-2) confidence scores for each detection
+An AI inspection report summarizing the results
 
-3) an AI inspection report summarizing the results
-
-
-Future Improvements
-
-Add PDF export for inspection reports
-
-Improve defect classification categories
-
-Deploy full system to cloud
-
-Add model performance metrics dashboard
-
-Author
+## 👩‍💻 Author
 
 Manisha Sen
 Computer Science Engineering Student
-Interested in AI, Data Science, and Computer Vision applications.
-
-License
-
-This project uses open-source libraries including YOLO and other Python frameworks.
+Interested in AI, Data Science, and Computer Vision applications
