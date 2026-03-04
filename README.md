@@ -129,6 +129,14 @@ The system produces:
 - confidence scores for each detection
 - an AI inspection report summarizing the results
 
+<img width="975" height="253" alt="image" src="https://github.com/user-attachments/assets/c7605af1-46d9-4bb6-9724-0e8a33b66494" />
+
+<img width="975" height="730" alt="image" src="https://github.com/user-attachments/assets/36fde88a-ae22-467b-8002-9901f73248a6" />
+
+<img width="975" height="672" alt="image" src="https://github.com/user-attachments/assets/aa7ac5a3-44ef-4ce9-b1ab-1b34e88ca5d5" />
+
+<img width="975" height="682" alt="image" src="https://github.com/user-attachments/assets/a7f85fd3-5197-47fa-aaed-072442187a1f" />
+
 ---
 
 ## 🔮 Future Improvements
