@@ -50,19 +50,14 @@ Users can upload an image of a vehicle, and the system detects possible defects 
 ## 🧠 System Architecture
 
 User Uploads Image
-
       ↓
 React Frontend
-
       ↓
 Flask API
-
       ↓
 YOLO Object Detection Model
-
       ↓
 Detection Results + Confidence Scores
-
       ↓
 Inspection Report Displayed in UI
 
