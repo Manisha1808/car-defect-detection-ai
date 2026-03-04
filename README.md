@@ -60,7 +60,6 @@ Detection Results + Confidence Scores
 ↓
 Inspection Report Displayed in UI
 
-Project Structure
 car-defect-detection-ai
 │
 ├── backend
@@ -77,10 +76,13 @@ car-defect-detection-ai
 ├── screenshots
 │
 └── README.md
+
+
 How to Run the Project
 1️⃣ Clone the repository
 git clone https://github.com/Manisha1808/car-defect-detection-ai.git
 cd car-defect-detection-ai
+
 2️⃣ Setup backend
 pip install -r requirements.txt
 python app.py
@@ -96,17 +98,17 @@ npm start
 Frontend runs on:
 
 http://localhost:3000
+
 Example Output
 
-The system produces:
+ The system produces:
 
-detected defect regions on the vehicle image
+1) detected defect regions on the vehicle image
 
-confidence scores for each detection
+2) confidence scores for each detection
 
-an AI inspection report summarizing the results
+3) an AI inspection report summarizing the results
 
-(Add screenshots here in your repo for better presentation.)
 
 Future Improvements
 
