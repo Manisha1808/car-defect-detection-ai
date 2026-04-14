@@ -19,10 +19,11 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://car-defect-detection-ai.onrender.com/predict"), {
-        method: "POST",
-        body: formData,
-      });
+     const response = await fetch("https://car-defect-detection-ai.onrender.com/predict", {
+  method: "POST",
+  body: formData,
+});
+      
 
       const data = await response.json();
 
